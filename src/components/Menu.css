@@ -6,52 +6,51 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
-}
-
-.logo {
-  width: 30px;
-  height: 20px;
+  background: #0a0a0a;
+  position: relative;
 }
 
 .menus {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  gap: 20px;
 }
 
 .menus ul {
   list-style-type: none;
+  display: flex;
+  gap: 40px;
 }
 
 .menus li {
   display: inline-block;
-  margin-right: 60px;
   text-decoration: none;
- 
- 
+  position: relative;
 }
 
 .old-menu {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 400;
-  color: white;
-  transition: all 0.5s ease;
+  color: #cccccc;
+  padding: 8px 16px;
+  position: relative;
+  transition: all 0.4s ease;
 }
 
 .selected-menu {
-  color: #40E0D0;
+  color: #40e0d0;
 }
 
 .old-menu:hover {
-  color: #DFFF00;
+  color: #32CD32;
   font-size: 1rem;
-  
 }
 
 hr {
-  border-left: 0.8px solid rgb(243, 242, 242);
+  border-left: 1px solid #333333;
   height: 30px;
+  margin: 0 20px;
 }
 
 .profile {
@@ -59,37 +58,39 @@ hr {
   align-items: center;
   justify-content: space-evenly;
   margin-left: 20px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: #1a1a1a;
+  border: 1px solid #444444;
+  cursor: pointer;
 }
 
 .profile .avatar {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   text-align: center;
   position: relative;
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: rgb(221, 139, 221);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
   justify-content: center;
   align-items: center;
-  border-radius: 100%;
+  border-radius: 50%;
   text-align: center;
   display: flex;
-  background: rgb(252, 229, 252);
-  margin-right: 8px;
+  background: #00d4ff;
+  margin-right: 12px;
 }
 
 .profile .username {
-  font-size: 0.8rem;
-  font-weight: 700;
-  transition: all 0.7s ease;
-  color: #FFBF00;
-}
-
-.profile:hover {
-  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
 }
 
 .profile:hover .username {
-  cursor: pointer;
-  color: #48c9b0 ;
+  color: #00d4ff;
+  font-size: 0.95rem;
 } 

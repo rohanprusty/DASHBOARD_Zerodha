@@ -4,30 +4,36 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding: 30px;
 }
 
 .funds p {
-  font-size: 0.8rem;
-  color: rgb(179, 179, 179);
-  margin-right: 8px;
+  font-size: 0.85rem;
+  color: #888888;
+  margin-right: 30px;
+  font-weight: 500;
+  font-family: cursive;
 }
 
 .btn {
   text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 2px;
-  color: #fff;
-  margin-right: 2px;
-  margin-left: 2px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: whitesmoke;
+  margin-right: 8px;
+  margin-left: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-.btn-green {
-  background: #4caf50;
+.btn:hover {
+  background: #00ff88;
+  color: #000000;
 }
 
-.btn-blue {
-  background: #4184f3;
-}
 
 .row {
   width: 100%;
@@ -35,42 +41,49 @@
   align-items: center;
   justify-content: space-evenly;
   margin-top: 5%;
+  gap: 20px;
 }
 
 .col {
   flex-basis: 48%;
   text-align: left;
-}
-
-.col span {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2%;
+  background: #1a1a1a;
+  padding: 20px;
 }
 
 .section-icon {
   transform: scale(0.8);
-  color: rgb(66, 56, 56);
+  color: #00d4ff;
   padding: 0;
   margin: 0;
   margin-right: 10px;
 }
 
 .col span p {
-  display: inline-block;
-  font-size: 1.2rem;
-  font-weight: 300;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #cccccc;
+  letter-spacing: 0.5px;
 }
 
 .table {
-  border: 1px solid #ddd;
-  padding: 5% 8%;
+  border: 1px solid #333333;
+  padding: 20px;
+  border-radius: 8px;
+  background: #0a0a0a;
+  margin-top: 15px;
 }
 
 .table .data {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #333333;
+}
+
+.table .data:last-child {
+  border-bottom: none;
 }
 
 .table .data > * {
@@ -78,40 +91,39 @@
 }
 
 .table .data p:first-child {
-  font-size: 1rem;
-  color: rgb(151, 151, 151);
+  font-size: 0.9rem;
+  color: #888888;
+  font-weight: 500;
 }
 
 .imp {
   font-size: 1.5rem;
-  color: #313131;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .colored {
-  color: #4184f3;
+  color: #00d4ff;
 }
 
 .table hr {
   border: none;
-  background: #d1d1d1;
-  height: 0.5px;
+  background: #333333;
+  height: 1px;
   margin-bottom: 5%;
 }
 
 .commodity {
-  padding: 2% 8%;
+  padding: 20px;
   text-align: center;
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  margin-top: 20px;
 }
 
 .commodity p {
   margin-bottom: 10%;
-  color: #c9c9c9;
-}
-
-.btn-blue:hover {
-  background: #74a7fa;
-}
-
-.btn-green:hover {
-  background: #7bdd7f;
+  color: #888888;
+  font-weight: 500;
 } 

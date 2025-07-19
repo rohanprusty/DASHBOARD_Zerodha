@@ -3,20 +3,34 @@
   height: 10vh;
   display: flex;
   align-items: center;
-  box-shadow: 0px 0px 4px 2px rgb(236, 235, 235);
+  background: #0a0a0a;
+  border-bottom: 1px solid #333333;
   box-sizing: border-box;
   z-index: 9;
+  position: relative;
+}
+
+.topbar-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+  opacity: 0.3;
 }
 
 .indices-container {
   flex-basis: 32%;
   height: 100%;
   padding: 10px 20px;
-  border-right: 1px solid rgb(224, 224, 224);
+  border-right: 1px solid #333333;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background: #1a1a1a;
 }
 
 .nifty {
@@ -24,7 +38,11 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  z-index: -2;
+  z-index: 2;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #222222;
+  border: 1px solid #444444;
 }
 
 .sensex {
@@ -32,6 +50,10 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #222222;
+  border: 1px solid #444444;
 }
 
 .nifty > *,
@@ -40,25 +62,27 @@
 }
 
 .index {
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
   text-transform: uppercase;
-  color: rgb(97, 97, 97);
+  color: #cccccc;
   white-space: nowrap;
+  letter-spacing: 0.5px;
 }
 
 .index-points {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: rgb(223, 73, 73);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #00ff88;
 }
 
 .percent {
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: rgb(146, 146, 146);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #00d4ff;
 }
 
 .index:hover {
   cursor: pointer;
+  color: #ffffff;
 } 

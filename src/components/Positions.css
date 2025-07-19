@@ -1,8 +1,15 @@
 .title {
-  font-size: 1.3rem;
-  font-weight: 300;
-  color: rgb(71, 71, 71);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
   margin-bottom: 2%;
+}
+
+.order-table {
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  padding: 20px;
 }
 
 .order-table table {
@@ -11,16 +18,17 @@
 }
 
 .order-table tr {
-  border-top: 1px solid #f1f1f1;
-  border-bottom: 1px solid #f1f1f1;
+  border-top: 1px solid #333333;
+  border-bottom: 1px solid #333333;
 }
 
 .order-table th {
   text-align: right;
   padding: 15px 10px;
-  color: rgb(145, 145, 145);
-  font-weight: 300;
-  font-size: 0.8rem;
+  color: #888888;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
 }
 
 .order-table tr th:first-child,
@@ -30,24 +38,24 @@
 
 .order-table tr th:nth-child(1),
 .order-table tr th:nth-child(4) {
-  border-right: 1px solid #f1f1f1;
+  border-right: 1px solid #333333;
 }
 
 .order-table tr td:nth-child(1),
 .order-table tr td:nth-child(4) {
-  border-right: 1px solid #f1f1f1;
+  border-right: 1px solid #333333;
 }
 
 .order-table tr td:last-child {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
 }
 
 .order-table td {
-  padding: 10px 10px;
+  padding: 12px 10px;
   text-align: right;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 0.9rem;
-  color: rgb(73, 73, 73);
+  color: #cccccc;
 }
 
 .align-left {
@@ -55,9 +63,11 @@
 }
 
 .order-table td.profit {
-  color: rgb(72, 194, 55);
+  color: #00ff88;
+  font-weight: 600;
 }
 
 .order-table td.loss {
-  color: rgb(250, 118, 78);
+  color: #ff6b6b;
+  font-weight: 600;
 } 

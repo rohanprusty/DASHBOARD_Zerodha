@@ -1,20 +1,29 @@
-.username {
-  /* No direct styles, but .username h6 is styled */
-}
 
 .username h6 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: rgb(83, 83, 83);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
 .divider {
   border: none;
-  background: #d1d1d1;
+  background: #333333;
   height: 1px;
   margin: 20px 0;
   margin-bottom: 5%;
+  position: relative;
+}
+
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 1px;
+  background: #00d4ff;
 }
 
 .section {
@@ -29,13 +38,15 @@
 
 .section span p {
   display: inline-block;
-  font-size: 1.2rem;
-  font-weight: 300;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #cccccc;
+  letter-spacing: 0.5px;
 }
 
 .section-icon {
   transform: scale(0.8);
-  color: rgb(112, 112, 112);
+  color: #00d4ff;
   padding: 0;
   margin: 0;
   margin-right: 10px;
@@ -46,45 +57,55 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  padding: 20px;
 }
 
 .data .first h3 {
   font-size: 2.5rem;
-  font-weight: 300;
-  color: rgb(71, 71, 71);
+  font-weight: 600;
+  color: #ffffff;
 }
 
 .data .first p {
-  font-size: 0.8rem;
-  color: rgb(136, 136, 136);
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 500;
+  margin-top: 5px;
 }
 
 .data .first small {
-  font-size: 0.8rem;
-  color: rgb(72, 194, 55);
+  font-size: 0.9rem;
+  color: #00ff88;
+  font-weight: 600;
 }
 
 .data .first .profit {
-  color: rgb(72, 194, 55);
+  color: #00ff88;
 }
 
 .data hr {
-  border-left: 0.6px solid rgb(243, 242, 242);
+  border-left: 1px solid #333333;
   height: 70px;
+  margin: 0 20px;
 }
 
 .data .second p {
-  font-size: 0.8rem;
-  color: rgb(136, 136, 136);
+  font-size: 0.85rem;
+  color: #888888;
   margin-bottom: 10px;
   white-space: nowrap;
+  font-weight: 500;
 }
 
 .data .second p span {
   display: inline;
   margin-left: 5%;
-  font-size: 0.9rem;
-  color: rgb(100, 100, 100);
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .section hr {
@@ -92,5 +113,5 @@
 }
 
 .profit {
-  color: rgb(72, 194, 55);
+  color: #00ff88;
 } 
