@@ -32,6 +32,8 @@
 .btn:hover {
   background: #00ff88;
   color: #000000;
+ box-shadow: 0 0 8px #00ff88, 0 0 16px #00ff88;
+  border-color: #00d4ff;
 }
 
 

@@ -135,7 +135,7 @@
   background: #00ff88;
   color: #000000;
 }
-.buy:hover {
+.buy:hover , .buy:focus {
   box-shadow: 0 0 8px #00ff88, 0 0 16px #00ff88;
   border-color: #00d4ff;
 }
@@ -145,7 +145,7 @@
   background: #ff6b6b;
   color: #ffffff;
 }
-.sell:hover {
+.sell:hover, .sell:focus {
   box-shadow: 0 0 8px #ff6b6b, 0 0 16px #ff6b6b;
   border-color: #00d4ff;
 }
@@ -155,7 +155,7 @@
   border: 1px solid #444444;
   color: #ffffff;
 }
-.action:hover {
+.action:hover , .action:focus {
   box-shadow: 0 0 8px #00d4ff, 0 0 16px #00d4ff;
   border-color: #00d4ff;
 }

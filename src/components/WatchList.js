@@ -1,13 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./WatchList.css";
 
 import { Tooltip, Grow } from "@mui/material"; // to acess the hover effect through mui
 import { watchlist } from "../data/data";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
-import BarChartIcon from '@mui/icons-material/BarChart';
-import BoltIcon from '@mui/icons-material/Bolt';
+import BarChartIcon from "@mui/icons-material/BarChart";
+import BoltIcon from "@mui/icons-material/Bolt";
+import GeneralContext from "./GeneralContext";
+import { RoundChart } from "./RoundChart";
 
 const WatchList = () => {
+  // RoundChart data preparation
+  const labels = watchlist.map((subArray) => subArray["name"]);
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Price",
+        data: watchlist.map((stock) => stock.price),
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.7)",
+          "rgba(54, 162, 235, 0.7)",
+          "rgba(255, 206, 86, 0.7)",
+          "rgba(75, 192, 192, 0.7)",
+          "rgba(153, 102, 255, 0.7)",
+          "rgba(255, 159, 64, 0.7)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+
   return (
     <div className="watchlist-container">
       <div className="search-container">
@@ -26,6 +58,7 @@ const WatchList = () => {
           return <WatchListItems stock={stock} key={index} />;
         })}
       </ul>
+      <RoundChart data={data} />
     </div>
   );
 };
@@ -66,6 +99,8 @@ const WatchListItems = ({ stock }) => {
 // hover effect options to buy and sell other options ---->
 
 const WatchListActions = ({ uid }) => {
+  // Get openBuyWindow from context so we can open the BuyActionWindow
+  const { openBuyWindow } = useContext(GeneralContext);
   return (
     <span className="actions">
       <span>
@@ -75,7 +110,10 @@ const WatchListActions = ({ uid }) => {
           arrow
           TransitionComponent={Grow}
         >
-          <button className="buy">Buy</button>
+          {/* Major Fix : -->  Call openBuyWindow(uid) when Buy is clicked */}
+          <button className="buy" onClick={() => openBuyWindow(uid)}>
+            Buy
+          </button>
         </Tooltip>
         <Tooltip
           title="Sell (S)"
@@ -91,7 +129,9 @@ const WatchListActions = ({ uid }) => {
           arrow
           TransitionComponent={Grow}
         >
-          <button className="action"><BarChartIcon className="icon"/></button>
+          <button className="action">
+            <BarChartIcon className="icon" />
+          </button>
         </Tooltip>
         <Tooltip
           title="Thunder (T)"
@@ -99,7 +139,9 @@ const WatchListActions = ({ uid }) => {
           arrow
           TransitionComponent={Grow}
         >
-          <button className="action"><BoltIcon className="icon"/></button>
+          <button className="action">
+            <BoltIcon className="icon" />
+          </button>
         </Tooltip>
       </span>
     </span>

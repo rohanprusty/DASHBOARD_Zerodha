@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Holdings.css";
+import axios from "axios"; // Axios used for API calls
+import { VerticalGraph } from "./VerticleGraph";
 
-import { holdings } from "../data/data";
+// import { holdings } from "../data/data";
 
 const Holdings = () => {
+  const [holdings, setHoldings] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3002/allHoldings").then((res) => {
+      console.log(res.data);
+      setHoldings(res.data);
+    });
+  }, []);
+
+  // Prepare data for the vertical graph
+  const labels = holdings.map((subArray) => subArray["name"]);
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Stock Prices",
+        data: holdings.map((stock) => stock.price),
+        backgroundColor: "#F8C8DC",
+      },
+    ],
+  };
+
   return (
     <>
       <h3 className="title">Holdings ({holdings.length})</h3>
@@ -30,13 +55,15 @@ const Holdings = () => {
             // tofixed --> get to two decimal values.
 
             return (
-              <tr key={index} >
+              <tr key={index}>
                 <td>{stock.name}</td>
                 <td>{stock.qty}</td>
                 <td>{stock.avg.toFixed(2)}</td>
-                <td>{stock.price.toFixed(2)}</td>     
+                <td>{stock.price.toFixed(2)}</td>
                 <td>{curValue.toFixed(2)}</td>
-                <td className={profClass}>{(curValue - stock.avg * stock.qty).toFixed(2)}</td>
+                <td className={profClass}>
+                  {(curValue - stock.avg * stock.qty).toFixed(2)}
+                </td>
                 <td className={profClass}>{stock.net}</td>
                 <td className={dayClass}>{stock.day}</td>
               </tr>
@@ -63,6 +90,7 @@ const Holdings = () => {
           <p>P&L</p>
         </div>
       </div>
+      <VerticalGraph data={data} />
     </>
   );
 };
