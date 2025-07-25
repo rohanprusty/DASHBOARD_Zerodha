@@ -18,7 +18,7 @@ const BuyActionWindow = ({ uid }) => {
     setError("");
     setSuccess("");
     try {
-      await axios.post("http://localhost:3002/newOrder", {
+      await axios.post("https://zerodha-backend-siis.onrender.com/newOrders", {
         name: uid,
         qty: stockQuantity,
         price: stockPrice,
