@@ -58,7 +58,7 @@ zerodha-clone/
 
 ## 📸 Preview
 
-![Zerodha Dashboard Preview](https://zerodha-front-smoky.vercel.app/)
+Zerodha Preview - https://zerodha-front-smoky.vercel.app/
 
 ---
 
